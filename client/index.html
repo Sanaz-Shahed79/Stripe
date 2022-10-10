@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Home</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <!--Loading-->
+    <section id="loading">
+        <div class="text-center">
+            <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <h6>Justi a momment...</h6>
+        </div>
+    </section>
+
+
+    <header class="bg-dark py-2 text-white shadow mb-5">
+        <div class="container">
+            <div class="row justify-content-center justify-content-md-between align-items-center">
+                <a href="#!" onclick="showHome()" class="text-white">
+                    <h2>TechStore</h2>
+                </a>
+                <div>
+                    <button id="logout-btn" class="btn d-none" onclick="logout()">
+                        <i class="fa fa-close text-white"></i>
+                        <span class="username text-white">Logout</span>
+                    </button>
+                    <button id="login-btn" class="btn" 
+                    data-toggle="modal" 
+                    data-target="#loginModal">
+                        <i class="fa fa-user text-white"></i>
+                        <span class="username text-white">Login</span>
+                    </button>
+                    <button id="register-btn" class="btn" 
+                    data-toggle="modal" 
+                    data-target="#registerModal">
+                        <i class="fa fa-user text-white"></i>
+                        <span class="username text-white">Register</span>
+                    </button>
+                    <button class="btn" onclick="showCarts()">
+                        <i class="fa fa-shopping-cart text-white"></i>
+                        <span class="cart-count badge badge-danger">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Page Content-->
+    <main class="container">
+        <section id="products-wrapper">
+            <h6 class="text-muted">New Products</h6>
+            <!--Will be load from products() in app.js-->
+            <div id="products-area" class="row"></div>
+        </section>
+        <!--Will be load from cartUpdate() in cart.js-->
+        <section id="cart-items-wrapper" class="d-none">
+            <h6 class="text-muted">Cart Items</h6>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+              <button id ='paymentBtn' class="btn btn-sm btn-success d-none" onclick="createSession()">Online Payment</button>
+        </section>
+
+    </main>
+
+
+    <footer>
+        @2022.Sanaz & Donya All Rights Reserved.
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="login(event)">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="register(event)">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+    <!--Structure Files-->
+    <script src="./assets/js/jquery.slim.min.js" defer></script>
+    <script src="./assets/js/popper.min.js" defer></script>
+    <script src="./assets/js/bootstrap.min.js" defer></script>
+    <script src="./assets/js/fontawesome.js" defer></script>
+    <script src="./assets/js/axios.min.js" defer></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+    <!--Custom Codes-->
+    <script src="./assets/js/stripe.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/authentication.js" defer></script>
+    <script src="./assets/js/cart.js" defer></script>
+
+
+</body>
+</html>
