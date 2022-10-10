@@ -7,11 +7,11 @@ GitHub: https://github.com/Sanaz-Shahed79/Stripe
 
 .Uppgiften ska lämnas in i tid. ✅
 
-.Produkter ska listas på en sida. ✅
+-Produkter ska listas på en sida. ✅
 
-.Det ska gå att lägga till produkter i en kundvagn. ✅
+_Det ska gå att lägga till produkter i en kundvagn. ✅
 
-.Baserad på kundvagnen ska det gå att lägga en order genom Stripe. ✅
+:)Baserad på kundvagnen ska det gå att lägga en order genom Stripe. ✅
 
 .En ”Customer" skall skapas i Stripe i samband med att en ny order placeras (detta kräver ett formulär för att ange informationen Stripe efterfrågar). Validering på detta formulär/inputfält skall finnas. ✅
 
