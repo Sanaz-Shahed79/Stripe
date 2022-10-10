@@ -1,0 +1,51 @@
+:root{
+    --primar : #083AA9!important;
+}
+.card{
+    position: relative;
+}
+.card img{
+    display: block;
+    height: 100px!Important;
+    width: auto;
+    margin: 0 auto 10px auto;
+}
+.card .add-to-cart{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+    color: gray;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5ms;
+}
+.card .add-to-cart:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+footer{
+    position: fixed;
+    bottom: 10px;
+    color: gray;
+    width: 100%;
+    text-align: center;
+}
+#loading{
+    position: fixed;
+    background-color: #083ba9c4;
+    z-index: 111;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
