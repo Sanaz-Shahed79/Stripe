@@ -21,7 +21,7 @@ Ordern får inte under några omständigheter läggas utan genomförd betalning!
 
 
 
-# install
+# install:
 
 npm i
 
