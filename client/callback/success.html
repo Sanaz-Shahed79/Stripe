@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Success</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+
+    <header class="bg-dark py-2 text-white shadow mb-5">
+        <div class="container">
+            <div class="row justify-content-center justify-content-md-between align-items-center">
+                <a href="#!" onclick="showHome()" class="text-white">
+                    <h2>TechStore</h2>
+                </a>
+                <div>
+                    <button id="logout-btn" class="btn d-none" onclick="logout()">
+                        <i class="fa fa-close text-white"></i>
+                        <span class="username text-white">Logout</span>
+                    </button>
+                    <button id="login-btn" class="btn" 
+                    data-toggle="modal" 
+                    data-target="#loginModal">
+                        <i class="fa fa-user text-white"></i>
+                        <span class="username text-white">Login</span>
+                    </button>
+                    <button id="register-btn" class="btn" 
+                    data-toggle="modal" 
+                    data-target="#registerModal">
+                        <i class="fa fa-user text-white"></i>
+                        <span class="username text-white">Register</span>
+                    </button>
+                    <button class="btn d-none" onclick="showCarts()">
+                        <i class="fa fa-shopping-cart text-white"></i>
+                        <span class="cart-count badge badge-danger">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Page Content-->
+    <main class="container text-center">
+        <h2 class="text-success">Successful</h6>
+        <p class="text-center">
+          Sorry,Your Order Submited Successfully.
+        </p>
+        <a href="/" class="btn btn-sm btn-primary mx-auto">Back To Home</a>
+    </main>
+
+
+    <footer>
+        @2022.Sanaz & Donya All Rights Reserved.
+    </footer>
+
+  
+
+  
+    <!--Structure Files-->
+    <script src="../assets/js/jquery.slim.min.js" defer></script>
+    <script src="../assets/js/popper.min.js" defer></script>
+    <script src="../assets/js/bootstrap.min.js" defer></script>
+    <script src="../assets/js/fontawesome.js" defer></script>
+    <script src="../assets/js/axios.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!--Custom Codes-->
+    <script src="../assets/js/authentication.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/stripe.js"></script>
+    <script defer>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const sessionID = urlParams.get('session_id');
+        console.log(sessionID);
+        const order = verify(sessionID);
+        
+    </script>
+
+
+
+</body>
+</html>
